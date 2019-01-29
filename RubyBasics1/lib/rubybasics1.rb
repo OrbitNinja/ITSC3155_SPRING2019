@@ -1,19 +1,41 @@
 # Lab 1
 # Part I
 def sum arr
-  # YOUR CODE HERE
-  sumX = 0;
+  sumX = 0
   
   arr.each do |x|
-    sumX += x;
+    sumX += x
   end
   
-  return sumX;
+  return sumX
 end
 
 # Part II
 def max_2_sum arr
-  # YOUR CODE HERE
+  
+  sumX = 0
+  
+   arr.each do |x|
+     sumX += x
+     
+     if arr.length == 0
+      sumX = 0
+     end
+     
+     if arr.length == 1
+       sumX = arr[0]
+     end
+     
+     if arr.length > 1
+       arr = arr.sort
+       sumX = arr[-1]
+       sumX += arr[-2]
+     end
+     
+   end
+   
+   return sumX
+  
 end
 
 # Part III
