@@ -10,8 +10,10 @@ def array_2_hash emails, contacts
         return contacts
     else
         contacts.each do |key, value|
+            
             key2 = :"#{key}"
             contactsTemp[key2] = emails[counter]
+            
             counter+=1
         end
     end
@@ -30,6 +32,7 @@ def array2d_2_hash contact_info, contacts
         return contacts
     else
         contacts.each do |key, value|
+            
             key2 = :"#{key}"
             contactsTemp2[key2] = {:email => contact_info[counter2][0], :phone => contact_info[counter2][1]}
             
@@ -42,5 +45,28 @@ end
 
 # Part III
 def hash_2_array contacts
-    # YOUR CODE HERE
+    
+    phoneArray = []
+    nameArray = []
+    emailArray = []
+    contactsTemp3 = []
+    
+    
+    
+    contacts.each do |key, value|
+        
+        key2 = :"#{key}"
+        
+        phoneArray << contacts[key2][:phone]
+        nameArray << "#{key}"
+        emailArray << contacts[key2][:email]
+        
+    end
+    
+    contactsTemp3 << emailArray
+    contactsTemp3 << phoneArray
+    contactsTemp3 << nameArray
+
+   return contactsTemp3 
+   
 end
