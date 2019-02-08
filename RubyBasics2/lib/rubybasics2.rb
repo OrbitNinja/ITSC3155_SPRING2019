@@ -7,7 +7,17 @@ end
 
 # Part II
 def starts_with_consonant? s
-  # YOUR CODE HERE
+  
+  if /[AEIOUaeiou]/.match(s[0])
+    return false
+  else if /[BCDEFGHJKLMNPQRSTVWXYZbcdefghjklmnpqrstvwxyz]/.match(s[0])
+    return true
+  else
+    return false
+  end
+end
+
+
 end
 
 # Part III
