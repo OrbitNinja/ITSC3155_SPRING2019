@@ -10,17 +10,29 @@ def starts_with_consonant? s
   
   if /[AEIOUaeiou]/.match(s[0])
     return false
-  else if /[BCDEFGHJKLMNPQRSTVWXYZbcdefghjklmnpqrstvwxyz]/.match(s[0])
+  elsif /[BCDEFGHJKLMNPQRSTVWXYZbcdefghjklmnpqrstvwxyz]/.match(s[0])
     return true
   else
     return false
   end
-end
-
 
 end
 
 # Part III
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  
+  binary = s.to_i
+  
+  if s == "0"
+    return true
+  elsif /[a-zA-Z^$3-9*]/.match(s)
+    return false
+  else
+    if /^[10]*00$/.match(s) && binary % 2 == 0
+      return true
+    else 
+      return false
+    end
+  end
+
 end
