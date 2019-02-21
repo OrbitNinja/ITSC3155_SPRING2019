@@ -20,12 +20,21 @@ class Dessert
       @calories
     end
   end
+  
   def healthy?
-    
+    if(self.calories < 200)
+      return true
+    end
+    return false
   end
+  
   def delicious?
-    
+    if(name.include?("bean") && flavor == "licorice")
+      return false
+    end
+    return true
   end
+  
 end
 
 class JellyBean < Dessert
