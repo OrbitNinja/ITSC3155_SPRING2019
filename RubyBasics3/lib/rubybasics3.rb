@@ -10,5 +10,9 @@ class BookInStock attr_accessor :isbn, :price
         raise ArgumentError, 'Price is negative or 0' unless @price > 0.0
             
     end
-    
+
+    def price_as_string()
+        tempPrice = "$%.2f" %@price
+        return tempPrice
+    end
 end
