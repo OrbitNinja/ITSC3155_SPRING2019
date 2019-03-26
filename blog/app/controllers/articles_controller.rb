@@ -9,8 +9,10 @@ class ArticlesController < ApplicationController
     
     def create
         @article = Article.new(articles_params)
+        byebug
         
         if @article.save 
+            byebug
             redirect_to @article
         else 
             render 'new'
